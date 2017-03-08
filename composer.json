@@ -1,0 +1,13 @@
+{
+    "name": "nicole/www",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nicole",
+            "email": "colle@weirauch.dk"
+        }
+    ],
+    "require": {
+    	"stripe/stripe-php": "4.*"
+  }
+}

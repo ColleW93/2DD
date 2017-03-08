@@ -12,7 +12,7 @@ session_start();
     <title>2Day Design</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/Lager.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
@@ -112,18 +112,18 @@ session_start();
 			<div class="row">
 			
 				<div class="lagercontainer" >
-					<div class="features_items" style="padding-left: 60px!important;"><!--features_items-->
+					<div class="LagerInput"><!--features_items-->
 						
 						<h2 class="ltitle text-center">Tilføj Varer</h2>
 							<div class="lagerform"><!--product form-->
-								<form action="add-to-database.php" method="post">
+								<form action="add-to-database.php" method="post" class="form">
 									<input type="number" placeholder="Produkt Kategori ID" name="catID"/>
 									<input type="text" placeholder="Produkt Kategori" name="category"/>
 									<input type="text" placeholder="Produktnavn" name="name"/>
 									<input type="number" placeholder="Pris" name="price"/>
 									<input type="text" placeholder="Beskrivelse" name="description"/>									
 									<input type="number" placeholder="Antal" name="amount"/>
-									<button type="submit" name ="prodSub" class="btn btn-default">Tilføj</button>
+									<button type="submit" name ="prodSub" class="btn btn-default" id="lagerformbutton">Tilføj</button>
 								</form>
 							</div><!--/product form-->
 						</div>
@@ -133,13 +133,13 @@ session_start();
 								
 							?>
 
-							<h2 class="ltitle text-center" style="padding-left: 60px!important;">Lager Index</h2>
+							<h2 class="ltitle text-center">Lager Index</h2>
 
 
 				            <?php
 				               while ($row = mysqli_fetch_array($query))
 				                {
-				                   echo '<div class="col-sm-4" id="lager-lager" style="margin-bottom: 20px;"><div class="productinfo text-center" style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px" align="center">'.$row['Navn'].'<ul>ID: '. $row['ID'].'</ul><ol>'.'<img src="data:image/jpeg;base64,'.base64_encode( $row['Billede'] ).'"  height="200px" width="200px"/></img><div class="choose">
+				                   echo '<div class="col-sm-4" id="lager-lager" style="margin-bottom: 20px;"><div class="productinfo text-center" style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">'.$row['Navn'].'<ul>ID: '. $row['ID'].'</ul><ol style="margin-left:-40px;">'.'<img src="data:image/jpeg;base64,'.base64_encode( $row['Billede'] ).'"  height="200px" width="200px"/></img><div class="choose">
 									<ul class="nav nav-pills nav-justified">
 										<li>På lager: '. $row['Antal'].'</li>
 									</ul>
@@ -153,10 +153,6 @@ session_start();
 								</div></ol></div></div>';
 				                }
 				            ?>
-
-
-					</div><!--features_items-->
-				</div>
 				</div>
 			</div>
 		</div>

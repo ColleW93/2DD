@@ -113,14 +113,44 @@ session_start();
 			<div class="row">
 				<div class="col-sm-12">
 					<div id="maingreet">
-						
-						
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
 									<h1><span>2Day</span>Design</h1>
-									<h2>100% Økologiske & Miljøvenlige varer</h2>
-									<p>Udover egne produkter som økologiske varmepuder, øjenpuder og økologiske sjaler i Alpaca uld, omfatter varesortimentet økologiske sutter (Baby Buddy) fra Under the Nile, krammedyr - dukker fra Keptin-jr., ØKO-TEX varmedyr fra fashy. </p>
+									
+									<p><?php
+
+										$fornavn = $_POST['fornavn'];
+										$efternavn = $_POST['efternavn'];
+										$email = $_POST['email'];
+										$tlf = $_POST['tlf'];
+										$adresse = $_POST['adresse'];
+										$adresse2 = $_POST['adresse2'];
+										$postnummer = $_POST['postnummer'];
+										$by = $_POST['by'];
+
+
+										if (isset($_POST['rbgroup'])) {
+										  // Show the radio button value, i.e. which one was checked when the form was sent
+										  $levering = $_POST['rbgroup'];
+
+										}
+
+										if (isset($_POST['rbgroup2'])) {
+										  // Show the radio button value, i.e. which one was checked when the form was sent
+										  $betaling = $_POST['rbgroup2'];
+
+										}
+
+										$produktnavn = $_POST['produktnavn'];
+										$antal = $_POST['antal'];
+										$produktpris = $_POST['produktpris'];
+										$pris = $_POST['pris'];
+
+
+										echo $fornavn, $efternavn, $email, $tlf, $adresse, $adresse2, $postnummer, $by, $levering, $betaling, $produktnavn, $antal, $produktpris, $pris, $ordreID;
+										 
+										?> </p>
 									<button type="button" class="btn btn-default get">Se Varesortimentet</button>
 								</div>
 							</div>							
@@ -175,3 +205,4 @@ session_start();
 	</footer><!--/Footer-->
 </body>
 </html>
+

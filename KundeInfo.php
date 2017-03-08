@@ -1,6 +1,5 @@
 <?php
 $dbc = mysqli_connect('localhost', 'root', '', '2DD');
-$dbc->set_charset("utf8");
 
 session_start();
 ?>
@@ -13,7 +12,7 @@ session_start();
     <title>2Day Design</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/Lager.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
@@ -37,7 +36,7 @@ session_start();
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
 								<li><a href="Kurv.php"><i class="fa fa-shopping-basket"></i> Kurv</a></li>
-								<li><a href="mobilepay.php"><i class="fa fa-credit-card"></i> Til Kassen</a></li>
+								<li><a href="Kasse.php"><i class="fa fa-credit-card"></i> Til Kassen</a></li>
 								
 								<?php
 									if ( (!(isset($_SESSION["admin"]))==NULL) && !empty($_SESSION['email'])) {
@@ -62,7 +61,7 @@ session_start();
 			</div>
 		</div><!--/header_top-->
 		
-		<div class="header-middle" id="headmid"><!--header-middle-->
+<div class="header-middle" id="headmid"><!--header-middle-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4">
@@ -108,31 +107,37 @@ session_start();
 		</div><!--/header-bottom-->
 	</header><!--/header-->
 	
-	<section id="body"><!--maingreet-->
+	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<div id="maingreet">
+			
+				<div class="lagercontainer" >
+					<div class="LagerInput"><!--features_items-->
 						
-						
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>2Day</span>Design</h1>
-									<h2>100% Økologiske & Miljøvenlige varer</h2>
-									<p>Udover egne produkter som økologiske varmepuder, øjenpuder og økologiske sjaler i Alpaca uld, omfatter varesortimentet økologiske sutter (Baby Buddy) fra Under the Nile, krammedyr - dukker fra Keptin-jr., ØKO-TEX varmedyr fra fashy. </p>
-									<button type="button" class="btn btn-default get">Se Varesortimentet</button>
-								</div>
-							</div>							
+						<h2 class="ltitle text-center">Kunde Info</h2>
+							<div class="lagerform"><!--product form-->
+								<form action="opdater-kunde.php" method="post" class="form">
+									ID <input type="number" name="brugerID" Value="'.$_POST['brugerID'].'" disabled/>
+									Fornavn <input type="text" name="fornavn" Value="'.$_POST['fornavn'].'"/>
+									Efternavn <input type="text" name="efternavn" Value="'.$_POST['efternavn'].'"/>
+									E-mail <input type="text" name="email" Value="'.$_POST['email'].'"/>
+									Password <input type="text" name="password" Value="'.$_POST['password'].'"/>
+									Tlf. <input type="text" name="tlf" Value="'.$_POST['tlf'].'"/>
+									<button type="submit" name="opdaterkunde" class="btn btn-default" id="lagerformbutton">Tilføj</button>
+								</form>
+							</div><!--/product form-->
 						</div>
-					</div>				
+						
+							<?php
+								$query = mysqli_query($dbc, "SELECT * FROM products");
+								
+							?>
 				</div>
 			</div>
 		</div>
-	</section><!--/maingreet-->
+	</section>
 	
-	
-	<footer id="footer"><!--Footer-->				
+<footer id="footer"><!--Footer-->				
 		<div class="footer-widget">
 			<div class="container">
 				<div class="row">

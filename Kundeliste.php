@@ -1,6 +1,5 @@
 <?php
 $dbc = mysqli_connect('localhost', 'root', '', '2DD');
-$dbc->set_charset("utf8");
 
 session_start();
 ?>
@@ -13,7 +12,7 @@ session_start();
     <title>2Day Design</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/Lager.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
@@ -37,7 +36,7 @@ session_start();
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
 								<li><a href="Kurv.php"><i class="fa fa-shopping-basket"></i> Kurv</a></li>
-								<li><a href="mobilepay.php"><i class="fa fa-credit-card"></i> Til Kassen</a></li>
+								<li><a href="Kasse.php"><i class="fa fa-credit-card"></i> Til Kassen</a></li>
 								
 								<?php
 									if ( (!(isset($_SESSION["admin"]))==NULL) && !empty($_SESSION['email'])) {
@@ -62,7 +61,7 @@ session_start();
 			</div>
 		</div><!--/header_top-->
 		
-		<div class="header-middle" id="headmid"><!--header-middle-->
+<div class="header-middle" id="headmid"><!--header-middle-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4">
@@ -108,31 +107,51 @@ session_start();
 		</div><!--/header-bottom-->
 	</header><!--/header-->
 	
-	<section id="body"><!--maingreet-->
+	<section>
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div id="maingreet">
-						
-						
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>2Day</span>Design</h1>
-									<h2>100% Økologiske & Miljøvenlige varer</h2>
-									<p>Udover egne produkter som økologiske varmepuder, øjenpuder og økologiske sjaler i Alpaca uld, omfatter varesortimentet økologiske sutter (Baby Buddy) fra Under the Nile, krammedyr - dukker fra Keptin-jr., ØKO-TEX varmedyr fra fashy. </p>
-									<button type="button" class="btn btn-default get">Se Varesortimentet</button>
-								</div>
-							</div>							
-						</div>
-					</div>				
+			<div class="row">		
+				<div class="lagercontainer" >
+						<h2 class="ltitle text-center">Kundeliste</h2>
+							<?php
+								$Kundeliste = mysqli_query($dbc, "SELECT * FROM users");
+
+								
+							?>
+
+
+				            <?php
+				               while ($row = mysqli_fetch_array($Kundeliste))
+				                {
+				                   echo '<div class="col-sm-4" id="lager-lager" style="margin-bottom: 20px;"><div class="productinfo text-center" style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
+				                   <span style="font-weight: bold;">Kunde ID: </span>'.$row['brugerID'].'
+				                   <ul><span style="font-weight: bold;">Fornavn: </span>'. $row['fornavn'].'</ul>'.'
+				                   <ul><span style="font-weight: bold;">Efternavn: </span>'. $row['efternavn'].'</ul>'.'
+				                   <ul><span style="font-weight: bold;">E-mail: </span>'. $row['email'].'</ul>'.'
+				                   <ul><span style="font-weight: bold;">Tlf.: </span>'. $row['tlf'].'</ul>
+
+				                   <ol style="margin-left:-40px;">'.'
+				                   	<div class="choose">
+										
+									<form action="KundeInfo.php" method="post">
+									<ul class="nav nav-pills nav-justified">
+										<li><input id="lagerput" type="hidden" name="brugerID" value="'.$row['brugerID'].'"/></li>
+										<li><input id="lagerput" type="hidden" name="fornavn" value="'.$row['fornavn'].'"/></li>
+										<li><input id="lagerput" type="hidden" name="efternavn" value="'.$row['efternavn'].'"/></li>
+										<li><input id="lagerput" type="hidden" name="email" value="'.$row['email'].'"/></li>
+										<li><input id="lagerput" type="hidden" name="tlf" value="'.$row['tlf'].'"/></li>
+										<li><input id="lagerput" type="hidden" name="password" value="'.$row['password'].'"/></li>
+										<button type="submit" id="lagerbutt" name="KundeInfo" class="btn btn-default">Opdatér Info</button>
+									</ul>
+									</form>
+								</div></ol></div></div>';
+				                }
+				            ?>
 				</div>
 			</div>
 		</div>
-	</section><!--/maingreet-->
+	</section>
 	
-	
-	<footer id="footer"><!--Footer-->				
+<footer id="footer"><!--Footer-->				
 		<div class="footer-widget">
 			<div class="container">
 				<div class="row">

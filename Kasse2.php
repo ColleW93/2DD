@@ -112,16 +112,12 @@ session_start();
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<div id="maingreet">
-						
-						
+					<div id="maingreet">				
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<h1><span>2Day</span>Design</h1>
-									<h2>100% Økologiske & Miljøvenlige varer</h2>
-									<p>Udover egne produkter som økologiske varmepuder, øjenpuder og økologiske sjaler i Alpaca uld, omfatter varesortimentet økologiske sutter (Baby Buddy) fra Under the Nile, krammedyr - dukker fra Keptin-jr., ØKO-TEX varmedyr fra fashy. </p>
-									<button type="button" class="btn btn-default get">Se Varesortimentet</button>
+									<h1><span>Tak for din bestilling!</span></h1>
+									<p>Du modtager en ordrebekræftigelse per e-mail snarest. </p>
 								</div>
 							</div>							
 						</div>

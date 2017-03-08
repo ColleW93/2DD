@@ -13,7 +13,7 @@ session_start();
     <title>2Day Design</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/Admin.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
@@ -108,28 +108,37 @@ session_start();
 		</div><!--/header-bottom-->
 	</header><!--/header-->
 	
-	<section id="body"><!--maingreet-->
+	<section class="">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div id="maingreet">
-						
-						
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>2Day</span>Design</h1>
-									<h2>100% Økologiske & Miljøvenlige varer</h2>
-									<p>Udover egne produkter som økologiske varmepuder, øjenpuder og økologiske sjaler i Alpaca uld, omfatter varesortimentet økologiske sutter (Baby Buddy) fra Under the Nile, krammedyr - dukker fra Keptin-jr., ØKO-TEX varmedyr fra fashy. </p>
-									<button type="button" class="btn btn-default get">Se Varesortimentet</button>
-								</div>
-							</div>							
-						</div>
-					</div>				
-				</div>
-			</div>
+			<div class="col-sm-14 center">
+				<div class=""><!--features_items-->
+					<h2 class="title text-center" style="font-size: 28px;">Administrator Sider</h2>
+					    <div class="col-md-4"> 
+					    	<div class="AdminSection">	                    		
+								<a href="Lager.php" class="AdminKat">
+									<h4> Lager </h4>
+								</a>
+							</div>									
+	                    </div>
+	                    <div class="col-md-4">  		                    		
+							<div class="AdminSection">	                    		
+								<a href="Bestillinger.php" class="AdminKat">
+									<h4> Bestillinger </h4>
+								</a>
+							</div>										
+	                    </div>
+	                    <div class="col-md-4">  		                    		
+							<div class="AdminSection">	                    		
+								<a href="Kundeliste.php" class="AdminKat">
+									<h4> Kundeliste </h4>
+								</a>
+							</div>										
+	                    </div>
+	            </div> 
+			</div><!--features_items-->
 		</div>
-	</section><!--/maingreet-->
+	</section>
+	
 	
 	
 	<footer id="footer"><!--Footer-->				

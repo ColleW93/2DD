@@ -113,14 +113,19 @@ session_start();
 			<div class="row">
 				<div class="col-sm-12">
 					<div id="maingreet">
-						
-						
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
 									<h1><span>2Day</span>Design</h1>
-									<h2>100% Økologiske & Miljøvenlige varer</h2>
-									<p>Udover egne produkter som økologiske varmepuder, øjenpuder og økologiske sjaler i Alpaca uld, omfatter varesortimentet økologiske sutter (Baby Buddy) fra Under the Nile, krammedyr - dukker fra Keptin-jr., ØKO-TEX varmedyr fra fashy. </p>
+									
+									<p><?php
+
+										$ordreID = $_POST['ordreID'];
+										$afsluttet = $_POST['afsluttet'];
+										
+										echo $ordreID, $afsluttet;
+										 
+										?> </p>
 									<button type="button" class="btn btn-default get">Se Varesortimentet</button>
 								</div>
 							</div>							
@@ -175,3 +180,4 @@ session_start();
 	</footer><!--/Footer-->
 </body>
 </html>
+

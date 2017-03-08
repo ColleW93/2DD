@@ -6,12 +6,32 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background:;
-  position: relative;
+  
   font-weight:400px;
+  margin: 0 0 300px;
+  
 }
+
+
+#footer {
+  background: #4d8574;
+  position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+}
+
+
 
 ul li {
   list-style: none;
@@ -359,131 +379,53 @@ ul.sub-menu {
 
 
 /*************************
-******* Main CSS ******
+*********Admin CSS********
 **************************/
 
-
-
-
-.col-sm-4 {
-  float: left!important;
+.AdminSection {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding-top: 50px;
 }
 
-.left-sidebar h2 {
-  color: #850F0F;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 auto 30px;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-  z-index:3;
-
+.AdminKat {
+  -moz-box-shadow: 0px 10px 14px -7px #3e7327;
+  -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
+  background:-moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:-webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:-o-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:-ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
+  background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+  background-color:#77b55a;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #4b8f29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:25px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #5b8a3c;
 }
-
-.payment-details {
-  border: 1px solid #850F0F;
-  margin-bottom: 35px;
-  padding-bottom: 20px;
-  padding-top: 15px;
-  float: left;
-
+.AdminKat:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
+  background:-moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:-webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:-o-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:-ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
+  background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+  background-color:#72b352;
 }
-
-.panel-delivery {
-  padding: 5px 20px;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  color: #850F0F;
-
-
+.AdminKat:active {
+  position:relative;
+  top:1px;
 }
-
-p {
-  font-size: 15px;
-  color: grey;
-}
-
-#adresse
- {
-  padding-left: 50px;
-  font-size: 15px;
-  color: grey;
- }
-
- #bank
- {
-  padding-left: 50px;
-  font-size: 15px;
-  color: grey;
- }
-
-input[type=radio] {
-    display:none;
-}
-
-input[type=radio] + label {
-    font-size: 25px;
-}
-
-input[type=radio] + label:before {
-    content: "";  
-    display: inline-block;  
-    width: 30px;  
-    height: 30px;  
-    vertical-align:middle;
-    margin-right: 8px;  
-    background-color: #CCCCCC;  
-    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
-    border-radius: 8px;  
-}
-
-input[type=radio]:checked + label:before {
-    background-color: #4d8574; 
-    font-size:90px;
-    text-align:center;
-    line-height:14px;
-    text-shadow:0px 0px 3px #eee;
-}
-
- #fakturaform {
-  width: 100%;
-  display: inline-block;
- }
-
- 
- #fakturatabel {
-  height: 200px;
-  display: inline-block;
-
- }
-
- #column1 {
-  position: relative;
-  float: left;
-  display: block;
-  height: 100%;
- }
-
- #column2 {
-  position: relative;
-  float: left;
-  display: block;
-  height: 100%;
- }
-
- #forminput {
-  position: absolute; 
-  right: 90px; 
-  width: 300px; 
-  margin-top: 10px;
- }
-
- #fakturalabel {
-  margin-top: 10px;
- }
-
- .payment-button{
-  align-items: center;
- }

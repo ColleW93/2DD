@@ -6,11 +6,28 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background:;
-  position: relative;
+  
   font-weight:400px;
+  margin: 0 0 300px;
+  
+}
+
+
+#footer {
+  background: #4d8574;
+  position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
 }
 
 ul li {
@@ -70,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .contactinfo ul li a:hover{
-  background:inherit;
+	background:inherit;
 }
 
 
@@ -79,11 +96,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fa-twitter:hover  {
-  background:#5BBCEC;
+	background:#5BBCEC;
 }
 
 .fa-linkedin:hover  {
-  background:#FF4518;
+	background:#FF4518;
 }
 
 .fa-instagram:hover {
@@ -117,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-middle .container .row .col-sm-8 {
-  padding-right:0;
+	padding-right:0;
 }
 
 
@@ -135,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .index-menu ul li {
-  display:inline-block;
+	display:inline-block;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -158,13 +175,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .index-menu ul li a i{
-  margin-right:3px;
+	margin-right:3px;
 }
 
 
 .index-menu ul li a:hover {
-  color:#85564d;
-  background:#fff;
+	color:#85564d;
+	background:#fff;
 }
 
 
@@ -187,17 +204,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mainmenu ul li a {
-  color: #696763;
-  font-family: 'Roboto', sans-serif;
-  font-size: 17px;
-  font-weight: 300;
-  padding: 0;
-  padding-bottom: 10px;
+	color: #696763;
+	font-family: 'Roboto', sans-serif;
+	font-size: 17px;
+	font-weight: 300;
+	padding: 0;
+	padding-bottom: 10px;
 }
 
 .mainmenu ul li a:hover, .mainmenu ul li a.active,  .shop-menu ul li a.active{
-  background:none;
-  color:#850F0F;
+	background:none;
+	color:#850F0F;
 }
 
 
@@ -219,18 +236,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ul.sub-menu {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background: rgba(0, 0, 0, 0.6);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 220px;
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  display: none;
-  z-index: 999;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 220px;
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+	display: none;
+	z-index: 999;
 }
 
 .dropdown ul.sub-menu li .active{
@@ -308,15 +325,15 @@ ul.sub-menu {
 }
 
 .single-widget h2 i{
-  margin-right:15px;
+	margin-right:15px;
 }
 
 .single-widget ul li a{
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 5px 0;
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	padding: 5px 0;
 }
 
 .single-widget ul li a i {
@@ -324,8 +341,8 @@ ul.sub-menu {
 }
 
 .single-widget ul li a:hover{
-  background:none;
-  color:#5f4d85;
+	background:none;
+	color:#5f4d85;
 }
 
 
@@ -358,132 +375,129 @@ ul.sub-menu {
 }
 
 
-/*************************
-******* Main CSS ******
-**************************/
-
-
-
-
-.col-sm-4 {
-  float: left!important;
+.footer-bottom {
+  background: #D6D6D0;
+  padding-top: 10px;
 }
 
-.left-sidebar h2 {
+.footer-bottom p {
+  color: #363432;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-left: 15px;
+}
+
+.footer-bottom p span a {
+  color: #85564d;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+
+
+/*************************
+*******LAGER CSS******
+**************************/
+
+#lager-lager{
+  
+}
+
+h2.ltitle {
   color: #850F0F;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  margin: 0 auto 30px;
-  text-align: center;
+  margin: 0 15px;
   text-transform: uppercase;
-  position: relative;
-  z-index:3;
+  margin-bottom: 30px;
+  
+}
+
+#lagerput {
+  width: 65px!important;
+}
+
+#lagerbutt {
+  margin-top: 5px!important;
+}
+
+.lagercontainer {
+  padding-left: 50px;
 
 }
 
-.payment-details {
-  border: 1px solid #850F0F;
-  margin-bottom: 35px;
-  padding-bottom: 20px;
-  padding-top: 15px;
-  float: left;
-
+.form {
+  width: 800px;
+  padding-left: 150px;
 }
 
-.panel-delivery {
-  padding: 5px 20px;
-  font-size: 20px;
+.lagerform {
+  width: 400px;
+  display: block;
+  margin-bottom: 105px;
+  margin-top: 65px;
+  overflow: hidden;
+}
+
+.lagerform {
+  float: center!important;
+  margin-left: 25%;
+  margin-bottom: 5%;
+}
+
+.lagerform h2, .lagerform h2 {
+  color: #696763;
   font-family: 'Roboto', sans-serif;
-  color: #850F0F;
-
-
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
 }
 
-p {
-  font-size: 15px;
-  color: grey;
-}
 
-#adresse
- {
-  padding-left: 50px;
-  font-size: 15px;
-  color: grey;
- }
-
- #bank
- {
-  padding-left: 50px;
-  font-size: 15px;
-  color: grey;
- }
-
-input[type=radio] {
-    display:none;
-}
-
-input[type=radio] + label {
-    font-size: 25px;
-}
-
-input[type=radio] + label:before {
-    content: "";  
-    display: inline-block;  
-    width: 30px;  
-    height: 30px;  
-    vertical-align:middle;
-    margin-right: 8px;  
-    background-color: #CCCCCC;  
-    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
-    border-radius: 8px;  
-}
-
-input[type=radio]:checked + label:before {
-    background-color: #4d8574; 
-    font-size:90px;
-    text-align:center;
-    line-height:14px;
-    text-shadow:0px 0px 3px #eee;
-}
-
- #fakturaform {
-  width: 100%;
-  display: inline-block;
- }
-
- 
- #fakturatabel {
-  height: 200px;
-  display: inline-block;
-
- }
-
- #column1 {
-  position: relative;
-  float: left;
+.lagerform form input, .lagerform form input {
+  background: #F0F0E9;
+  border: medium none;
+  color: #696763;
   display: block;
-  height: 100%;
- }
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 60%;
+}
 
- #column2 {
-  position: relative;
-  float: left;
+.lagerform form span{
+  line-height: 25px;
+}
+
+.lagerform form span input {
+  width: 15px;
+  float: center;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.lagerform form button {
+  margin-top: 23px;
+  margin-left: 25%;
+}
+
+.lagerform form button, .signup-form form button {
+  background: #850F0F;
+  border: medium none;
+  border-radius: 0;
+  color: #FFFFFF;
   display: block;
-  height: 100%;
- }
+  font-family: 'Roboto', sans-serif;
+  padding: 6px 25px;
+  margin-left: 90px;
+}
 
- #forminput {
-  position: absolute; 
-  right: 90px; 
-  width: 300px; 
-  margin-top: 10px;
- }
 
- #fakturalabel {
-  margin-top: 10px;
- }
-
- .payment-button{
-  align-items: center;
- }
+.lagerindex {
+  margin-left: -20px;
+}

@@ -158,223 +158,174 @@ $dbc = mysqli_connect('localhost', 'root', '', '2DD');
 
 	
 	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="left-sidebar">
-						<h2>Faktureringsinformation</h2>
-						<div class="payment-details">
-							<div class="panel-delivery">
-								<div class="container" id="fakturatabel">
-									<form id ="fakturaform" name="form" method="post" action="#" style="height: 200px;">
-										<div class="col-sm-6" id="column1">
-										
-												<label for="first_name" id="fakturalabel">Fornavn <span id="star">*</span></label>
-										 
-										  		<input  type="text" name="first_name" id="forminput" >
-										  		<br>
-										 
-										  		<label for="last_name" id="fakturalabel">Efternavn <span id="star">*</span></label>
-										
-										  		<input  type="text" name="last_name"  id="forminput" >
-										  		<br>
-										 	
-										  		<label for="email" id="fakturalabel">E-mail <span id="star">*</span></label>
-										
-										  		<input  type="text" name="email" id="forminput" >
-										  		<br>
-
-										 	
-										  		<label for="telephone" id="fakturalabel" ">Telefonnummer <span id="star">*</span></label>
-											
-										  		<input  type="text" name="telephone" id="forminput">
-										  		<br>
-										 	
-										</div>
-										<div class="col-sm-6" id="column2">
-										
-										  		<label for="last_name" id="fakturalabel">Addresse <span id="star">*</span></label>
-										 	
-										  		<input  type="text" name="last_name" id="forminput">
-										 		<br>
-										  		<label for="last_name" id="fakturalabel">Addresse 2</label>
-										 	
-										  		<input  type="text" name="last_name" id="forminput">
-										 		<br>
-										  		<label for="last_name" id="fakturalabel">Postnummer <span id="star">*</span></label>
-										 	
-										  		<input  type="text" name="last_name" id="forminput">
-												 <br>
-										  		<label for="last_name" id="fakturalabel">By <span id="star">*</span></label>
-										 	
-										  		<input  type="text" name="last_name" id="forminput">
-										 		<br>
-										</div>
-										
-										
-										
-										
-										<tr>
-											<td colspan="2" style="text-align:center">
-										  		<input type="submit" value="Submit">   ( <a href="http://www.freecontactform.com/html_form.php">HTML Form</a> )
-										 	</td>
-										</tr>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+		<form id="fakturaform" name="fakturaform" method="post" action="testordre.php" style="height: 200px;">
+			<div class="container">
 				<div class="row">
-				<div class="col-sm-4">
-					<div class="left-sidebar">
-						<h2>Levering</h2>
-						<div class="payment-details">
-							<div class="panel-delivery">
-								<div class="container">
-									<form id ="radio-choice" name="form" method="post" action="#">
-										<input type="radio" id="rb1" name="rb" value="" checked>
-											<label for="rb1">Post Danmark (39,00 DKK)</label><br>
+					<div class="col-sm-4">
+						<div class="left-sidebar">
+							<h2>Faktureringsinformation</h2>
+							<div class="payment-details">
+								<div class="panel-delivery">
+									<div class="container" id="fakturatabel">
 										
-										<input type="radio" id="rb2" name="rb"value="">
-											<label for="rb2">Afhentning i 2daydesign.dk butikken efter aftale (0,00 DKK)</label><br>
-										<p id="adresse">2daydesign.dk, Lars Hansensvej 3, 3600 Frederikssund  </p>										
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="left-sidebar">
-						<h2>Betaling</h2>
-						<div class="payment-details">
-							<div class="panel-delivery">
-								<div class="container">
-									<form id ="radio-choice" name="form" method="post" action="#">
-										<input type="radio" id="rb2" name="rb"value="">
-											<label for="rb2">Mobile Pay</label><br>
-										<input type="radio" id="rb1" name="rb" value="" checked>
-											<label for="rb1">Dankort</label><br>
-										<input type="radio" id="rb1" name="rb" value="" checked>
-											<label for="rb1">Forbrugsforeningen</label><br>									
-										<input type="radio" id="rb3" name="rb" value="">
-											<label for="rb3">Bankoverførelse</label>
-										<p id="bank">Nordea || Reg. 1345 || kontornr. 4386556925 </p>	
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="left-sidebar">
-						<h2>Ordre</h2>
-						<div class="payment-details">
-							<div class="panel-delivery">
-								<div class="container">
-									<div class="table-responsive">  
-					                     <table class="table table-bordered">  
-					                          <tr>  
-					                               <th width="40%">Produkt</th>  
-					                               <th width="10%">Antal</th>  
-					                               <th width="20%">Pris</th>  
-					                               <th width="15%">Total</th>  
-					                                 
-					                          </tr>  
-					                          <?php   
-					                          if(!empty($_SESSION["shopping_cart"]))  
-					                          {  
-					                               $total = 0;  
-					                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
-					                               {  
-					                          ?>  
-					                          <tr>  
-					                               <td><?php echo $values["item_name"]; ?></td>  
-					                               <td><?php echo $values["item_quantity"]; ?></td>  
-					                               <td><?php echo $values["item_price"]; ?> Kr,-</td>  
-					                               <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?> Kr,-</td>  
-					                               
-					                          </tr>  
-					                          <?php  
-					                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
-					                               }  
-					                          ?>  
-					                          <tr>  
-					                               <td colspan="3" align="right">Total</td>  
-					                               <td align="right"><?php echo number_format($total, 2); ?> Kr,-</td>  
-					                               <td></td>  
-					                          </tr>  
-					                          <?php  
-					                          }  
-					                          ?>
-
-					                          
-					                     </table>  
-			                		</div>
-				                	<div>
-										<label for="comments">Kommentar til ordren</label>
-										<br>
+											<div class="col-sm-6" id="column1">
+											
+													<label for="fornavn" id="fakturalabel">Fornavn <span id="star">*</span></label>
 											 
-										<textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+											  		<input  type="text" name="fornavn" id="forminput" >
+											  		<br>
+											 
+											  		<label for="efternavn" id="fakturalabel">Efternavn <span id="star">*</span></label>
+											
+											  		<input  type="text" name="efternavn"  id="forminput" >
+											  		<br>
+											 	
+											  		<label for="email" id="fakturalabel">E-mail <span id="star">*</span></label>
+											
+											  		<input  type="text" name="email" id="forminput" >
+											  		<br>
+
+											 	
+											  		<label for="tlf" id="fakturalabel" ">Telefonnummer <span id="star">*</span></label>
+												
+											  		<input  type="text" name="tlf" id="forminput">
+											  		<br>
+											 	
+											</div>
+											<div class="col-sm-6" id="column2">
+											
+											  		<label for="adresse" id="fakturalabel">adresse <span id="star">*</span></label>
+											 	
+											  		<input  type="text" name="adresse" id="forminput">
+											 		<br>
+											  		<label for="adresse2" id="fakturalabel">Addresse 2</label>
+											 	
+											  		<input  type="text" name="adresse2" id="forminput">
+											 		<br>
+											  		<label for="Postnummer" id="fakturalabel">Postnummer <span id="star">*</span></label>
+											 	
+											  		<input  type="text" name="postnummer" id="forminput">
+													 <br>
+											  		<label for="By" id="fakturalabel">By <span id="star">*</span></label>
+											 	
+											  		<input  type="text" name="by" id="forminput">
+											 		<br>
+											</div>
+										</form>
 									</div>
-
-
 								</div>
-
 							</div>
-
 						</div>
 					</div>
 				</div>
 
-			</div>
-			<div class="payment-button">
-				<div class="panel-delivery">
-					<div class="container">
-						<script> $('.stripe-button').attr('data-amount', $total); </script>
-			 			<script src="https://checkout.stripe.com/checkout.js"></script>
+					<div class="row">
+					<div class="col-sm-4">
+						<div class="left-sidebar">
+							<h2>Levering</h2>
+							<div class="payment-details">
+								<div class="panel-delivery">
+									<div class="container">
+										
+											<input type="radio" id="rb1" name="rbgroup" value="postdk" checked>
+												<label for="rb1">Post Danmark (39,00 DKK)</label><br>
+											
+											<input type="radio" id="rb2" name="rbgroup" value="afhentning">
+												<label for="rb2">Afhentning i 2daydesign.dk butikken efter aftale (0,00 DKK)</label><br>
+											<p id="adresse">2daydesign.dk, Lars Hansensvej 3, 3600 Frederikssund  </p>										
+									
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="left-sidebar">
+							<h2>Betaling</h2>
+							<div class="payment-details">
+								<div class="panel-delivery">
+									<div class="container">
+										
+											<input type="radio" id="rb2" name="rbgroup2" value="mobilepay">
+												<label for="rb2">Mobile Pay</label><br>							
+											<input type="radio" id="rb3" name="rbgroup2" value="bank">
+												<label for="rb3">Bankoverførelse</label>
+											<p id="bank">Nordea || Reg. 1345 || kontornr. 4386556925 </p>	
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="left-sidebar">
+							<h2>Ordre</h2>
+							<div class="payment-details">
+								<div class="panel-delivery">
+									<div class="container">
+										<div class="table-responsive">
+											
+							                     <table class="table table-bordered">  
+							                          <tr>  
+							                               <th width="40%">Produkt</th>  
+							                               <th width="10%">Antal</th>  
+							                               <th width="20%">Pris</th>  
+							                               <th width="15%">Total</th>  
+							                                 
+							                          </tr>  
+							                          <?php   
+							                          if(!empty($_SESSION["shopping_cart"]))  
+							                          {  
+							                               $total = 0;  
+							                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
+							                               {  
+							                          ?>  
+							                          <tr>  
+							                               <td><?php echo $values["item_name"]; ?></td>  
+							                               <td><?php echo $values["item_quantity"]; ?></td>  
+							                               <td><?php echo $values["item_price"]; ?> Kr,-</td>  
+							                               <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?> Kr,-</td>  
+							                               
+							                          </tr>  
+							                          <?php  
+							                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+							                               }  
+							                          ?>  
+							                          <tr>  
+							                               <td colspan="3" align="right">Total</td>  
+							                               <td align="right"><?php echo number_format($total, 2); ?> Kr,-</td>  
+							                               <td></td>
+							                          </tr>  
+							                          <?php  
+							                          }  
+							                          ?>
 
-						<button id="customButton">Betal</button>
-						
-						<script>
-						var handler = StripeCheckout.configure({
-						  key: 'pk_test_uWYohL9FRpNOS7XyNJlWBqX9',
-						  image: 'img/2DDLotus.jpg',
-						  locale: 'auto',
-						  token: function(token) {
-						    // You can access the token ID with `token.id`.
-						    // Get the token ID to your server-side code for use.
-						  }
-						});
-
-						document.getElementById('customButton').addEventListener('click', function(e) {
-						  // Open Checkout with further options:
-						  handler.open({
-						    name: '2DayDesign',
-						    description: '2 widgets',
-						    zipCode: true,
-						    currency: 'dkk',
-						    amount: '<?php echo $total*100; ?>'
-						  });
-						  e.preventDefault();
-						});
-
-						// Close Checkout on page navigation:
-						window.addEventListener('popstate', function() {
-						  handler.close();
-						});
-						</script>
+							                     	<input type="hidden" name="produktnavn" value="<?php echo $values["item_name"]; ?>" />
+							                     	<input type="hidden" name="antal" value="<?php echo $values["item_quantity"]; ?>" />
+							                     	<input type="hidden" name="produktpris" value="<?php echo $values["item_price"]; ?>" />
+							                     	<input type="hidden" name="pris" value="<?php echo $total; ?>" />
+							                     </table>
+							               
+				                		</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="payment-details">
+						<div class="panel-delivery">
+							<div class="container">
+								<input type="submit" name="submitforms" value="Send Ordre"/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</section>
 	
 	
